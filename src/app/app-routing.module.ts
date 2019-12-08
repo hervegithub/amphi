@@ -17,6 +17,14 @@ const routes: Routes = [
   {
     path: 'register-step2',
     loadChildren: () => import('./register-step2/register-step2.module').then( m => m.RegisterStep2PageModule)
+  },
+  {
+    path: 'register-step3',
+    loadChildren: () => import('./register-step3/register-step3.module').then( m => m.RegisterStep3PageModule)
+  },
+  {
+    path: 'terminer',
+    loadChildren: () => import('./terminer/terminer.module').then( m => m.TerminerPageModule)
   }
 ];
 @NgModule({
