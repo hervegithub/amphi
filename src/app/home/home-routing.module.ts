@@ -55,6 +55,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home/teachers/teachers-list',
     pathMatch: 'full'
+  },
+  {
+    path: 'sigle-teacher-profil',
+    loadChildren: () => import('./sigle-teacher-profil/sigle-teacher-profil.module').then( m => m.SigleTeacherProfilPageModule)
   }
 ];
 
