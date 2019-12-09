@@ -4,6 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content style="--background:#f4f5f8;">
+  <ion-list>
+    <ion-item class="ion-cards" *ngFor="let item of listes">
+      <ion-img src="../../../assets/108-80.png" slot="start" style="width: 80; height: 108;"></ion-img>
+      <div>
+        <p class="name">{{item.nom}}</p>
+        <p class="niveau-ville">{{item.niveau}}, {{item.ville}}</p>
+        <p class="stats"> <ion-icon  name="medal" color="primary"></ion-icon>  {{item.recommandation}} recommandations</p>
+        <p class="stats"> <ion-icon  name="star" color="primary"></ion-icon>  {{item.etoile}} notes</p>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>
