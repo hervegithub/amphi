@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-teachers-list',
@@ -10,7 +11,7 @@ export class TeachersListPage implements OnInit {
 
   listes= [];
   slideOpts={};
-  constructor(private router: Router) {
+  constructor(private router: Router,private http: HttpClient) {
     this.listes = 
     [
       {
@@ -66,6 +67,11 @@ export class TeachersListPage implements OnInit {
         slideShadows: true,
       },
     }
+
+    this.http.get('http://localhost:3000/api/teachers', {}).subscribe(data => {
+    console.log(data); // data received by server
+
+  })
   }
 
   navigateToSigleTeacher(){

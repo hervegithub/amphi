@@ -1,5 +1,7 @@
 {
   "name": "amphi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
