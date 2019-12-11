@@ -7,7 +7,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigleTeacherProfilPage implements OnInit {
 
-  constructor() { }
+  slideOpts={};
+
+  
+
+  Competences=[
+    {
+      id:1,
+      titre:"Mathematiques",
+      niveau:["3 ième", "2nd" , "Terminale"],
+    },
+    {
+      id:1,
+      titre:"Mathematiques",
+      niveau:["3 ième", "2nd" , "Terminale"],
+    },
+    {
+      id:1,
+      titre:"Mathematiques",
+      niveau:["3 ième", "2nd" , "Terminale"],
+    }
+  ]
+
+  constructor() { 
+    this.slideOpts = {
+      slidesPerView: 2.2,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+    }
+
+  }
 
   ngOnInit() {
   }
