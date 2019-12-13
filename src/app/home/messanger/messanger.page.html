@@ -1,7 +1,14 @@
-<ion-header style="background-color: #29aba5;height: 18%;">
-  
+<ion-header style="background-color: #32a060;height: 18%;">
 </ion-header>
 
 <ion-content style="--background:#f4f5f8;">
-
+    <ion-list>
+        <ion-item (click)="goTomessagerie()" *ngFor="let message of messages" class="lignes">
+            <img slot="start" src="../../../assets/108-80.png" class="image">
+            <p class="messages"><b>{{message.name}}</b><br>
+                {{message.message}}
+            </p>
+            <span slot="end" class="hours">{{message.date}}</span>
+        </ion-item>
+    </ion-list>
 </ion-content>

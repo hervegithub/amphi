@@ -1,5 +1,5 @@
 <ion-content padding>
-  <h3 class="page-title">Login</h3>
+  <img src="../../assets/Teacha/logoPresentation2.png" class="image">
   <form>
     <ion-item>
       <ion-input type="text" placeholder="phone number"></ion-input>
@@ -11,12 +11,13 @@
     <ion-item lines="none">
       <a slot="end" class="forgotten">Forgot your password?</a>
     </ion-item>
-    <ion-button expand="block" class="button-degrader">Login</ion-button>
+    <ion-button expand="block" class="button-degrader" 
+    (click)="onClick()">Login</ion-button>
 
-    <div text-center style="margin-top: 10%;">
+    <!--<div text-center style="margin-top: 10%;">
       <p class="order-login">Or use finger print</p>
      <ion-icon name="finger-print" style="font-size: 5em;" color="tertiary"></ion-icon>
-    </div>
+    </div>-->
   </form>
   <div text-center class="sign-up">
     <p>Don't have account ? <br><a (click)="naviguateToRegister()">Sign up</a></p>

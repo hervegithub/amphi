@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messanger',
@@ -7,7 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessangerPage implements OnInit {
 
-  constructor() { }
+  messages=[
+    {
+      uid:1,
+      name:"Naruto Uzumaki",
+      message:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      date:"11h14"
+    },
+    {
+      uid:2,
+      name:"Naruto Uzumaki",
+      message:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing elit.",
+      date:"11h14"
+    },
+    {
+      uid:1,
+      name:"Naruto Uzumaki",
+      message:"Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+      date:"11h14"
+    },
+  ]
+
+  constructor(private router: Router) { }
+
+  goTomessagerie(){
+    this.router.navigateByUrl('messagerie');
+  }
 
   ngOnInit() {
   }
