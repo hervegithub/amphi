@@ -59,6 +59,10 @@ const routes: Routes = [
   {
     path: 'sigle-teacher-profil',
     loadChildren: () => import('./sigle-teacher-profil/sigle-teacher-profil.module').then( m => m.SigleTeacherProfilPageModule)
+  },
+  {
+    path: 'prices',
+    loadChildren: () => import('./prices/prices.module').then( m => m.PricesPageModule)
   }
 ];
 

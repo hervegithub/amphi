@@ -9,7 +9,7 @@ export class SigleTeacherProfilPage implements OnInit {
 
   slideOpts={};
 
-  
+  segment: string="notes";
 
   Competences=[
     {
