@@ -1,9 +1,21 @@
-<ion-header style="background-color: #32a060;height: 18%;">
+<ion-header style="background-color: #32a060;height: 20%;">
+  <ion-toolbar style="--background:#32a060;">
+    <ion-title color="light" style="margin-left: 40px;">Les teachas</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-row>
+    <ion-col>
+      <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel"
+      placeholder="Taper la ville"></ion-searchbar>
+    </ion-col>
+  </ion-row>
 </ion-header>
 
-<ion-content style="--background:#f4f5f8;">
-  <ion-grid>
-    <ion-row>
+<ion-content >
+  <ion-grid >
+   <!-- <ion-row>
       <p style="margin-left: 2px; font-weight: bold;">Nos meilleurs profs</p>
       <ion-col>
         <ion-slides  [options]="slideOpts">
@@ -43,9 +55,54 @@
             </ion-slide>
         </ion-slides>
       </ion-col>
+    </ion-row>-->
+    <p style="margin-left: 5px; font-weight: bold;">Les meilleurs</p>
+    <ion-row >
+      <ion-col>
+        <ion-slides  [options]="slideOpts">
+          <ion-slide  >
+            <ion-card class="vavorite-card" (click)="navigateToSigleTeacher()">
+              <div class="div-image">
+                <img src="../../../assets/108-80.png" class="image">
+                <ion-badge color="primary" class="badge"><ion-icon  name="medal" style="font-size: 23px;
+                  margin-top: 4px;"></ion-icon></ion-badge>
+              </div>
+              <p text-center class="name">Naruto Uzumaki</p>
+              <p text-center class="ion-nowrap comptences"> Chimie, Maths, Physique, Anglais</p>
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+              <ion-card class="vavorite-card">
+                <div class="div-image">
+                  <img src="../../../assets/108-80.png" class="image">
+                  <ion-badge color="primary" class="badge"><ion-icon  name="medal" style="font-size: 23px;
+                    margin-top: 4px;"></ion-icon></ion-badge>
+                </div>
+                <p text-center class="name">Naruto Uzumaki</p>
+                <p text-center class="ion-nowrap comptences"> Chimie, Maths, Physique, Anglais</p>
+              </ion-card>
+          </ion-slide>
+  
+          <ion-slide>
+              <ion-card class="vavorite-card" (click)="navigateToSigleTeacher()">
+                <div class="div-image">
+                  <img src="../../../assets/108-80.png" class="image">
+                  <ion-badge color="primary" class="badge"><ion-icon  name="medal" style="font-size: 23px;
+                    margin-top: 4px;"></ion-icon></ion-badge>
+                </div>
+                <p text-center class="name">Naruto Uzumaki</p>
+                <p text-center class="ion-nowrap comptences"> Chimie, Maths, Physique, Anglais</p>
+                <!--<div text-center>
+                 <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
+                 <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
+                 <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
+               </div>-->
+              </ion-card>
+            </ion-slide>
+        </ion-slides>
+      </ion-col>
     </ion-row>
-
-    <p style="margin-left: 2px; font-weight: bold;">Voir plus de prof</p>
+    <p style="margin-left: 5px; font-weight: bold;">Voir plus de prof</p>
     
     <ion-row>
       <ion-col size="6" *ngFor="let item of listes">
@@ -55,11 +112,6 @@
           </div>
           <p text-center class="name">{{item.nom}}</p>
           <p text-center class="ion-nowrap comptences"> Chimie, Maths, Physique, Anglais</p>
-          <div text-center>
-            <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
-            <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
-            <ion-icon name="star" style="font-size: 22px;" color="primary"></ion-icon>
-          </div>
         </ion-card>
       </ion-col>
     </ion-row>

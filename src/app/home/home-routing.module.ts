@@ -45,6 +45,33 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'single-profil',
+        children :[
+          {
+            path:"",
+            loadChildren: () => import('./sigle-teacher-profil/sigle-teacher-profil.module').then( m => m.SigleTeacherProfilPageModule)
+          }
+        ]
+      },
+      {
+        path: 'messagerie',
+        children :[
+          {
+            path:"",
+            loadChildren: () => import('./messagerie/messagerie.module').then( m => m.MessageriePageModule)
+          }
+        ]
+      },
+      {
+        path: 'price',
+        children :[
+          {
+            path:"",
+            loadChildren: () => import('./prices/prices.module').then( m => m.PricesPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/home/teachers-list',
         pathMatch: 'full'
@@ -55,18 +82,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home/teachers/teachers-list',
     pathMatch: 'full'
-  },
-  {
-    path: 'sigle-teacher-profil',
-    loadChildren: () => import('./sigle-teacher-profil/sigle-teacher-profil.module').then( m => m.SigleTeacherProfilPageModule)
-  },
-  {
-    path: 'prices',
-    loadChildren: () => import('./prices/prices.module').then( m => m.PricesPageModule)
-  },
-  {
-    path: 'messagerie',
-    loadChildren: () => import('./messagerie/messagerie.module').then( m => m.MessageriePageModule)
   }
 ];
 

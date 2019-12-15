@@ -75,7 +75,7 @@ export class TeachersListPage implements OnInit {
   }
 
   navigateToSigleTeacher(){
-    this.router.navigateByUrl('sigle-teacher-profil');
+    this.router.navigateByUrl('home/single-profil');
   }
 
   ngOnInit() {

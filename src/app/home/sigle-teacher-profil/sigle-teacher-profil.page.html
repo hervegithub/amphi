@@ -1,19 +1,54 @@
-<ion-header style="background-color: #32a060;height: 18%;">
-</ion-header>
-
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-</ion-content>
-<ion-footer>
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar style="background-color: green;">
+    <img src="../../../assets/108-80.png"
+    style="height: 100px; width: 100px; border-radius: 45%; margin-left: 35%;margin-top: 10px;">
+    <ion-badge color="primary" class="badge"><ion-icon name="medal" class="medal"></ion-icon></ion-badge>
+    
+    <div text-center style="width: 70%; margin-left: 10%;">
+      <ion-badge color="primary" class="competences">Maths</ion-badge>
+      <ion-badge color="primary" class="competences">physique</ion-badge>
+      <ion-badge color="primary" class="competences">SVT</ion-badge>
+      <ion-badge color="primary" class="competences">Technologie</ion-badge>
+    </div>
+    
     <ion-row>
       <ion-col>
-        <ion-button expand="block" shape="round" fill="outline">Recruter</ion-button>
+        <ion-button expand="block" shape="round" fill="outline"
+        (click)="recrute()">Recruter</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" shape="round" fill="outline">Message</ion-button>
+        <ion-button expand="block" shape="round" fill="outline" 
+        (click)="goToMessage()">Message</ion-button>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-segment [(ngModel)]="segment">
+        <ion-segment-button value="apropos">
+          <ion-label>A propos</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="notes">
+          <ion-label>Notes (4.5)</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
   </ion-toolbar>
-</ion-footer>
+</ion-header>
+
+<ion-content style="--background: #efefef;">
+  <div [ngSwitch]="segment">
+    <ion-card *ngSwitchCase="'apropos'">
+      <ion-item>
+        <p><b>Description</b><br><br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum vero dicta voluptatum excepturi fugit quam tempora consectetur dolores, cumque aliquam accusamus iure eaque iusto, harum quisquam similique ex impedit mollitia!
+        </p>
+      </ion-item>
+    </ion-card>
+  
+    <ion-card *ngSwitchCase="'notes'">
+      <ion-item *ngFor="let note of notes">
+        <p><b>Naruto Uzumaki (4,5) </b> <br><br>{{note.message}} <br>
+        <b text-right>17 mai 2019</b></p><br>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

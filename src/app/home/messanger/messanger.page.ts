@@ -32,7 +32,7 @@ export class MessangerPage implements OnInit {
   constructor(private router: Router) { }
 
   goTomessagerie(){
-    this.router.navigateByUrl('messagerie');
+    this.router.navigateByUrl('home/messagerie');
   }
 
   ngOnInit() {

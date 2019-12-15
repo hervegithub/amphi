@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sigle-teacher-profil',
@@ -9,27 +10,24 @@ export class SigleTeacherProfilPage implements OnInit {
 
   slideOpts={};
 
-  segment: string="notes";
+  segment: string="apropos";
 
-  Competences=[
+  notes=[
     {
-      id:1,
-      titre:"Mathematiques",
-      niveau:["3 ième", "2nd" , "Terminale"],
+      userId:1,
+      message:" j'ai vraiment aimer ce qu'il à abattu comme travail avec mon fils"      
     },
     {
-      id:1,
-      titre:"Mathematiques",
-      niveau:["3 ième", "2nd" , "Terminale"],
+      userId:2,
+      message:" j'ai vraiment aimer ce qu'il à abattu comme travail avec mon fils"      
     },
     {
-      id:1,
-      titre:"Mathematiques",
-      niveau:["3 ième", "2nd" , "Terminale"],
-    }
+      userId:3,
+      message:" j'ai vraiment aimer ce qu'il à abattu comme travail avec mon fils"      
+    },
   ]
 
-  constructor() { 
+  constructor(private route: Router) { 
     this.slideOpts = {
       slidesPerView: 2.2,
       coverflowEffect: {
@@ -44,6 +42,14 @@ export class SigleTeacherProfilPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goToMessage(){
+    this.route.navigateByUrl('home/messagerie');
+  }
+
+  recrute(){
+    this.route.navigateByUrl('home/price');
   }
 
 }
